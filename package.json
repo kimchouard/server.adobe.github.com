@@ -1,0 +1,29 @@
+{
+  "name": "server-adobe-github",
+  "version": "0.1.0",
+  "author": "Kim Chouard <kim.chouard@gmail.com>",
+  "scripts": {
+    "start": "node app",
+    "test": "NODE_ENV=test mocha -R spec -t 50000"
+  },
+  "main": "./lib/server-adobe-github",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimchouard/server.adobe.github.com.git"
+  },
+  "dependencies": {
+    "async": "0.2.x",
+    "request": "2.26.x",
+    "restify": "2.6.x",
+    "newrelic": "1.x.x"
+  },
+  "devDependencies": {
+    "mocha": "1.11.x",
+    "should": "1.2.x",
+    "supertest": "0.7.x",
+    "jshint": "2.1.x"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
