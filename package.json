@@ -21,7 +21,8 @@
     "mocha": "1.11.x",
     "should": "1.2.x",
     "supertest": "0.7.x",
-    "jshint": "2.1.x"
+    "jshint": "2.1.x",
+    "grunt": "~0.4.2"
   },
   "engines": {
     "node": ">=0.10"
