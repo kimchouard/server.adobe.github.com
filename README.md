@@ -15,6 +15,14 @@ node server.js
 
 Here is the routes you can call:
 
-- `/` will give you all Adobe repositories & languages.
-- `/repos` will give you all Adobe GitHub repositories.
-- `/langs` will give you every languages Adobe use in GitHub.
+- `/`
+
+Adobe repositories & languages.
+
+- `/repos`
+
+Adobe GitHub repositories.
+
+- `/langs` 
+
+Languages Adobe use in GitHub.
