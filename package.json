@@ -22,7 +22,8 @@
     "should": "1.2.x",
     "supertest": "0.7.x",
     "jshint": "2.1.x",
-    "grunt": "~0.4.2"
+    "grunt": "~0.4.2",
+    "async": "~0.2.9"
   },
   "engines": {
     "node": ">=0.10"
