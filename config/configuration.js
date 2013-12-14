@@ -38,7 +38,7 @@ var dir = __dirname;
 dir = dir.substring(0, dir.length - 6);
 
 // in minutes
-var defFreqReload = 0;
+var defFreqReload = 15;
 
 // Exports configuration for use by app.js
 module.exports = {
