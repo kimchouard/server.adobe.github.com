@@ -21,14 +21,15 @@ var server = module.exports.server = restify.createServer(config.server);
 //					Server creation / routing
 //----------------------------------------------------------
 
+server.use(config.crossOrigin);
+
 server.get('/', actions.respondRoot);
+server.opts('.*', function(req, res) { res.send(200); });
 
 server.listen(config.port, function() {
   console.log('%s listening at %s', server.name, server.url);
 });
 
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
 
 // Expose the server
 module.exports = server;
