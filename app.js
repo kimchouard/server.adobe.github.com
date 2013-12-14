@@ -1,7 +1,7 @@
 'use strict';
 
 var config = require('./config/configuration.js');
-var actions = require('./lib/server-adobe-github/actions.js');
+var controllers = require('./lib/server-adobe-github/controllers.js');
 var restify = require('restify');
 
 //DEBUG
@@ -23,7 +23,7 @@ var server = module.exports.server = restify.createServer(config.server);
 
 server.use(config.crossOrigin);
 
-server.get('/', actions.respondRoot);
+server.get('/', controllers.rootController);
 server.opts('.*', function(req, res) { res.send(200); });
 
 server.listen(config.port, function() {
