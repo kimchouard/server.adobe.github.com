@@ -1,7 +1,7 @@
 'use strict';
 
 var config = require('./config/configuration.js');
-var actions = require('./lib/actions.js');
+var actions = require('./lib/server-adobe-github/actions.js');
 var restify = require('restify');
 
 //DEBUG
