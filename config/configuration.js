@@ -37,6 +37,9 @@ function crossOrigin(req,res,next){
 var dir = __dirname;
 dir = dir.substring(0, dir.length - 6);
 
+// in minutes
+var defFreqReload = 0;
+
 // Exports configuration for use by app.js
 module.exports = {
   env: node_env,
@@ -45,5 +48,6 @@ module.exports = {
   pass: process.env.GHPASS,
   crossOrigin: crossOrigin,
   dir: dir,
+  freqReload: process.env.GHFREQRELOAD || defFreqReload,
   server: server
 };
