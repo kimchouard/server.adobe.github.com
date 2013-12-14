@@ -34,6 +34,9 @@ function crossOrigin(req,res,next){
   next();
 }
 
+var dir = __dirname;
+dir = dir.substring(0, dir.length - 6);
+
 // Exports configuration for use by app.js
 module.exports = {
   env: node_env,
@@ -41,5 +44,6 @@ module.exports = {
   user: process.env.GHUSER,
   pass: process.env.GHPASS,
   crossOrigin: crossOrigin,
+  dir: dir,
   server: server
 };
