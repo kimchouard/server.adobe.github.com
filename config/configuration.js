@@ -38,6 +38,8 @@ function crossOrigin(req,res,next){
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
+  user: process.env.GHUSER,
+  pass: process.env.GHPASS,
   crossOrigin: crossOrigin,
   server: server
 };
