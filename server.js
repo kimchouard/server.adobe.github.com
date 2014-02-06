@@ -28,6 +28,7 @@ server.opts('.*', function(req, res) { res.send(200); });
 
 server.listen(config.port, function() {
   console.log('%s listening at %s', server.name, server.url);
+  console.log('User github: '+config.user);
 });
 
 // Expose the server
