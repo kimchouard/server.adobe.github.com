@@ -5,10 +5,10 @@ Manage API calls on github to pull Adobe informations
 
 # Start
 
-After installing dependencies with `npm install` and grunt with `npm install grunt --save-dev`, you can lunch the server with:
+After installing dependencies with `npm install`, you can lunch the server with:
 
 ```
-grunt serve
+node server.js
 ```
 
 # Use
@@ -27,4 +27,11 @@ The ID and pass are pulled from the local environement variables. Add those line
 ```
 export GHUSER=[userName]
 export GHPASS=[userPassword]
+```
+
+The default port is 8000. To be able to bind the input port 80 to 8000:
+
+```
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo iptables-save
 ```
