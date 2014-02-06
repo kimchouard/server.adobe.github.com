@@ -26,10 +26,16 @@ server.use(config.crossOrigin);
 server.get('/', controllers.rootController);
 server.opts('.*', function(req, res) { res.send(200); });
 
-server.listen(config.port, function() {
-  console.log('%s listening at %s', server.name, server.url);
-  console.log('User github: '+config.user);
-});
+try {
+  server.listen(config.port, function() {
+    console.log('%s listening at %s', server.name, server.url);
+    console.log('User github: '+config.user);
+  });
+}
+catch(err) {
+  console.error("Error: [%s] Call: [%s]", err.message, err.syscall);
+  process.exit(1);
+};
 
 // Expose the server
 module.exports = server;
