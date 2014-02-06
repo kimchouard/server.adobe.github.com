@@ -6,7 +6,7 @@
     "start": "node app",
     "test": "NODE_ENV=test mocha -R spec -t 50000"
   },
-  "main": "./lib/server-adobe-github",
+  "main": "./app",
   "repository": {
     "type": "git",
     "url": "https://github.com/kimchouard/server.adobe.github.com.git"
