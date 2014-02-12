@@ -1,5 +1,6 @@
 'use strict';
 
+require('newrelic');
 var config = require('./config/configuration.js');
 var controllers = require('./lib/server-adobe-github/controllers.js');
 var restify = require('restify');
