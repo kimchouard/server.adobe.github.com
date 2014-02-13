@@ -35,3 +35,10 @@ The default port is 8000. To be able to bind the input port 80 to 8000:
 sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 sudo iptables-save
 ```
+
+If you want to lunch the process in background, simply use:
+```
+nohup node server.js &
+```
+
+**N.B.:** PM2 will soon be used to deploy
