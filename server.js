@@ -1,7 +1,11 @@
 'use strict';
 
-// require('newrelic');
 var config = require('./config/configuration.js');
+if (config.env == 'production') {
+	console.log('Start NewRelic logs.');
+  require('newrelic');
+}
+
 var controllers = require('./lib/server-adobe-github/controllers.js');
 var restify = require('restify');
 
@@ -11,10 +15,6 @@ var restify = require('restify');
 //----------------------------------------------------------
 //					Pull Adobe Repos
 //----------------------------------------------------------
-
-if (config.env == 'production') {
-  require('newrelic');
-}
 
 var server = module.exports.server = restify.createServer(config.server);
 
