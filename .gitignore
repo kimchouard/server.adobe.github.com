@@ -5,3 +5,5 @@ newrelic_agent.log
 newrelic.js
 
 newrelic.js
+
+nohup.out
