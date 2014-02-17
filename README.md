@@ -20,25 +20,52 @@ Here is the routes you can call:
 
 # Config
 
-In order for the app to make Github API calls without reaching the limit, you need to authentificate.
-
-The ID and pass are pulled from the local environement variables. Add those lines in your .bashrc:
-
-```
-export GHUSER=[userName]
-export GHPASS=[userPassword]
-```
-
-The default port is 8000. To be able to bind the input port 80 to 8000:
-
-```
-sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
-sudo iptables-save
-```
+## Start server
 
 If you want to lunch the process in background, simply use:
 ```
 nohup node server.js &
 ```
 
-**N.B.:** PM2 will soon be used to deploy
+
+## GitHub account
+
+In order for the app to make Github API calls without reaching the limit, you need to authentificate.
+
+The ID and pass are pulled from the local environement variables. Add those lines in your `~/.bashrc`:
+
+```
+export GHUSER=[userName]
+export GHPASS=[userPassword]
+```
+
+## Production
+
+It is better to use PM2 to launch your instance in production. More info [here](https://www.digitalocean.com/community/articles/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps).
+
+```
+pm2 start server.js
+```
+
+Once you push your server in production, you need to update your environnement variable NODE_ENV. It will mainly activating your NewRelic manager.
+
+```
+export NODE_ENV=production
+```
+
+## Port managing
+
+The default port is 5000. To be able to call on 80, 2 option
+
+- bind the input port 80 to 8000:
+
+```
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo iptables-save
+```
+
+- change env variable
+
+```
+export PORT=80
+```
