@@ -15,7 +15,8 @@
     "async": "0.2.x",
     "request": "2.26.x",
     "restify": "2.6.x",
-    "newrelic": "1.x.x"
+    "newrelic": "1.x.x",
+    "pm2": "0.7.x"
   },
   "devDependencies": {
     "mocha": "1.11.x",
