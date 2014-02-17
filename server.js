@@ -1,8 +1,10 @@
 'use strict';
 
+console.log('action, details, time');
+
 var config = require('./config/configuration.js');
 if (config.env == 'production') {
-	console.log('Start NewRelic logs.');
+	console.log('started_nr, NewRelic, ');
   require('newrelic');
 }
 
@@ -29,12 +31,13 @@ server.opts('.*', function(req, res) { res.send(200); });
 
 try {
   server.listen(config.port, function() {
-    console.log('%s listening at %s', server.name, server.url);
-    console.log('User github: '+config.user);
+  	var d = new Date();
+    console.log('started_serv,', server.name, ' : ', server.url, ',', (new Date()).toString());
+    console.log('config_user,',config.user, ',');
   });
 }
 catch(err) {
-  console.error("Error: [%s] Call: [%s]", err.message, err.syscall);
+  console.error('error,', err.message, ' Call: ', err.syscall, ',', (new Date()).toString());
   process.exit(1);
 };
 
