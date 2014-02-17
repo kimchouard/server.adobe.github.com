@@ -2,3 +2,4 @@ node_modules/
 .elasticbeanstalk/
 
 newrelic_agent.log
+newrelic.js
