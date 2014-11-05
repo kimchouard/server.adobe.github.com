@@ -33,7 +33,12 @@ try {
   server.listen(config.port, function() {
   	var d = new Date();
     console.log('started_serv,', server.name, ' : ', server.url, ',', (new Date()).toString());
-    console.log('config_user,',config.user, ',');
+
+	if (config.user && config.pass) {
+    console.log('config_user,',config.user, ',', (new Date()).toString());
+	} else {
+		console.log('config_no_user, "Warning! No user configured",', (new Date()).toString());
+	}
   });
 }
 catch(err) {
