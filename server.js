@@ -5,7 +5,7 @@ console.log('action, details, time');
 var config = require('./config/configuration.js');
 if (config.env == 'production') {
 	console.log('started_nr, NewRelic, ');
-  require('newrelic');
+	require('newrelic');
 }
 
 var controllers = require('./lib/server-adobe-github/controllers.js');

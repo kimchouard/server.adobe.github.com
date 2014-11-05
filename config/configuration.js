@@ -40,6 +40,11 @@ dir = dir.substring(0, dir.length - 6);
 // in minutes
 var defFreqReload = 15;
 
+// main http error display function
+function errorLog(url, res, err) {
+  console.log('error for ', url, ' : ', res.statusCode, ' : ', res.body, ' : ', err, ',', (new Date()).toString());
+};
+
 // Exports configuration for use by app.js
 module.exports = {
   env: node_env,
@@ -48,6 +53,7 @@ module.exports = {
   pass: process.env.GHPASS,
   crossOrigin: crossOrigin,
   dir: dir,
+  errorLog: errorLog,
   freqReload: process.env.GHFREQRELOAD || defFreqReload,
   server: server
 };
