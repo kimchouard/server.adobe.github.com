@@ -55,7 +55,7 @@ export NODE_ENV=production
 
 ## Port managing
 
-The default port is 5000. To be able to call on 80, 2 option
+The default port is 5000. To be able to call on 80, 2 options:
 
 - bind the input port 80 to 8000:
 
