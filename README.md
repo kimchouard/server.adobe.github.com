@@ -5,7 +5,7 @@ Manage API calls on github to pull Adobe informations
 
 # Start
 
-After installing dependencies with `npm install`, you can lunch the server with:
+After installing dependencies with `npm install`, you can launch the server with:
 
 ```
 node server.js
@@ -13,7 +13,7 @@ node server.js
 
 # Use
 
-Here is the routes you can call:
+Here are the routes you can call:
 
 - `/` : every Adobe organisations, repositories, languages used on github.
 - `/update` : update all json, pulling them from adobe.github.com repo.
@@ -22,7 +22,7 @@ Here is the routes you can call:
 
 ## Start server
 
-If you want to lunch the process in background, simply use:
+If you want to launch the process in background, simply use:
 ```
 nohup node server.js &
 ```
@@ -30,9 +30,9 @@ nohup node server.js &
 
 ## GitHub account
 
-In order for the app to make Github API calls without reaching the limit, you need to authentificate.
+In order for the app to make Github API calls without reaching the limit, you need to authenticate.
 
-The ID and pass are pulled from the local environement variables. Add those lines in your `~/.bashrc`:
+The ID and pass are pulled from the local environment variables. Add those lines in your `~/.bashrc`:
 
 ```
 export GHUSER=[userName]
@@ -47,7 +47,7 @@ It is better to use PM2 to launch your instance in production. More info [here](
 pm2 start server.js
 ```
 
-Once you push your server in production, you need to update your environnement variable NODE_ENV. It will mainly activating your NewRelic manager.
+Once you push your server in production, you need to update your environment variable NODE_ENV. It will mainly activate your NewRelic manager.
 
 ```
 export NODE_ENV=production
